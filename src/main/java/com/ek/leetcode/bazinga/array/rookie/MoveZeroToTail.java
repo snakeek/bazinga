@@ -1,9 +1,11 @@
-package com.ek.leetcode.bazinga.array;
-
-import java.util.Arrays;
+package com.ek.leetcode.bazinga.array.rookie;
 
 public class MoveZeroToTail {
 
+    /***
+     * 给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。
+     * @param nums
+     */
     public void moveZeroToTail(int[] nums) {
 
         if (nums == null || nums.length == 0) {

@@ -1,8 +1,5 @@
 package com.ek.leetcode.bazinga.array.thinking;
 
-import java.util.Arrays;
-import java.util.Collections;
-
 public class SortColors {
 
     /***

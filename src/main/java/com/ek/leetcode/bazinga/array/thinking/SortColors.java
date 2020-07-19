@@ -1,5 +1,8 @@
 package com.ek.leetcode.bazinga.array.thinking;
 
+import java.util.Arrays;
+import java.util.Collections;
+
 public class SortColors {
 
     /***
@@ -12,6 +15,36 @@ public class SortColors {
      * @param nums
      */
     public void sortColors(int[] nums) {
+        int head = 0;
+        int tail = nums.length - 1;
+        int jump = 1;
+        int temp;
+        while (head < tail) {
+            if (nums[head] > 1) {
+                temp = nums[head];
+                nums[head] = nums[tail];
+                nums[tail] = temp;
+                tail--;
+            } else if (nums[head] < 1) {
+                head++;
+                jump = 1;
+            } else if ((head+jump) <= tail) {
+                temp = nums[head];
+                nums[head] = nums[head + jump];
+                nums[head + jump] = temp;
+                jump++;
+            } else {
+                break;
+            }
+        }
+    }
 
+    public static void main(String[] args) {
+        int[] arr = new int[]{1,0,0};
+        SortColors sortColors = new SortColors();
+        sortColors.sortColors(arr);
+        for (Integer num : arr) {
+            System.out.print(num);
+        }
     }
 }

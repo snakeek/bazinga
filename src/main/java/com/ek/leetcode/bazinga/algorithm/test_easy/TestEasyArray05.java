@@ -1,5 +1,7 @@
 package com.ek.leetcode.bazinga.algorithm.test_easy;
 
+import java.util.Arrays;
+
 /**
  * Copyright (C), 2019-2020
  * FileName: TestEasyArray05
@@ -14,10 +16,15 @@ package com.ek.leetcode.bazinga.algorithm.test_easy;
  */
 public class TestEasyArray05 {
     public static void main(String[] args) {
-
+        TestEasyArray05 t = new TestEasyArray05();
+        System.out.println(t.singleNumber(new int[]{4,1,2,1,2}));
     }
 
     public int singleNumber(int[] nums) {
-        return 1;
+        int tmp = 0;
+        for (int num : nums) {
+            tmp = tmp ^ num;
+        }
+        return tmp;
     }
 }

@@ -15,14 +15,6 @@ public class TestEasyArray10 {
     }
 
     public boolean isValidSudoku(char[][] board) {
-
-    }
-
-    private boolean checkHorizon() {
-
-    }
-
-    private boolean checkVertical() {
-
+        return false;
     }
 }

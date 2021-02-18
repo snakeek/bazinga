@@ -16,12 +16,11 @@ public class MoveZeroToTail {
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] != 0) {
                 nums[zeroIndex] = nums[i];
+                if (zeroIndex < i) {
+                    nums[i] = 0;
+                }
                 zeroIndex++;
             }
-        }
-
-        for (; zeroIndex < nums.length; zeroIndex++) {
-            nums[zeroIndex] = 0;
         }
     }
 

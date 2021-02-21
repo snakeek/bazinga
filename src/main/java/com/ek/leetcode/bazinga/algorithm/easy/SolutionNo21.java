@@ -16,6 +16,28 @@ public class SolutionNo21 {
     }
 
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        return null;
+        ListNode head = new ListNode();
+        while (true) {
+            if (l1 == null && l2 == null) {
+                return head.next;
+            }
+            if (l1 == null) {
+                head.next = l2;
+                l2 = l2.next;
+                continue;
+            }
+            if (l2 == null) {
+                head.next = l1;
+                l1 = l1.next;
+                continue;
+            }
+            if (l1.val > l2.val) {
+                head.next = l2;
+                l2 = l2.next;
+            } else {
+                head.next = l1;
+                l1 = l1.next;
+            }
+        }
     }
 }

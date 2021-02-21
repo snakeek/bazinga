@@ -31,7 +31,11 @@ public class AATest {
         System.out.println(eight);
 
         Long aan = null;
-        System.out.println(aan.intValue());
+        //System.out.println(aan.intValue());
+
+
+        System.out.println("========");
+        sortArr(new int[]{1,0,1,0,1,2,1,0,2});
     }
 
     private int compareNext(int number, int time) {
@@ -55,5 +59,22 @@ public class AATest {
             number /= 10;
         }
         return list.toArray(new Integer[]{});
+    }
+
+    public static void sortArr(int[] nums) {
+        int zeroCounter = 0;
+        for (int i = nums.length - 1; i >= 0; i-- ) {
+            if (nums[i] == 0) {
+                zeroCounter++;
+            } else {
+                nums[i+zeroCounter] = nums[i];
+                if (i != (nums.length - 1)) {//最右侧是非0
+                    nums[i] = 0;
+                }
+            }
+        }
+        for (int i = 0; i < nums.length; i++) {
+            System.out.println("nums: " + nums[i]);
+        }
     }
 }

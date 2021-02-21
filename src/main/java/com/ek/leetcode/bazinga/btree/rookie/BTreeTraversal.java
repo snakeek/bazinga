@@ -1,9 +1,12 @@
 package com.ek.leetcode.bazinga.btree.rookie;
 
 import com.ek.leetcode.bazinga.btree.TreeNode;
+import sun.jvm.hotspot.debugger.Page;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Queue;
+import java.util.concurrent.LinkedBlockingQueue;
 
 public class BTreeTraversal {
     public static void main(String[] args) {
@@ -16,6 +19,15 @@ public class BTreeTraversal {
         bTreeTraversal.preOrderTraversal(root).stream().forEach(System.out::println);
         System.out.println("======");
         bTreeTraversal.inOrderTraversal(root).stream().forEach(System.out::println);
+        System.out.println("======");
+        bTreeTraversal.postOrderTraversal(root).stream().forEach(System.out::println);
+        System.out.println("======");
+        TreeNode levelRoot = new TreeNode(3);
+        levelRoot.setLeft(new TreeNode(9));
+        levelRoot.setRight(new TreeNode(20));
+        levelRoot.getRight().setLeft(new TreeNode(15));
+        levelRoot.getRight().setRight(new TreeNode(7));
+        bTreeTraversal.levelOrder(levelRoot);
     }
 
     /**
@@ -67,6 +79,49 @@ public class BTreeTraversal {
      */
     private List<Integer> postOrderTraversal(TreeNode root) {
         List<Integer> list = new ArrayList<>();
+        postOrderTraversal(root, list);
+        return list;
+    }
+
+    private void postOrderTraversal(TreeNode node, List<Integer> list) {
+        if (node == null) {
+            return;
+        }
+        postOrderTraversal(node.getLeft(), list);
+        postOrderTraversal(node.getRight(), list);
+        list.add(node.getVal());
+    }
+
+    private List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> list = new ArrayList<>();
+        Queue<TreeNode> nodeQueue = new LinkedBlockingQueue<>();
+        nodeQueue.add(root);
+        TreeNode node;
+        int levelCounter = 1;
+        while (!nodeQueue.isEmpty()) {
+            List<Integer> levelList = new ArrayList<>();
+            node = nodeQueue.poll();
+            levelCounter--;
+            levelList.add(node.getVal());
+            if (levelCounter == 0) {
+                list.add(levelList);
+                list = new ArrayList<>();
+            }
+            if (node.getLeft() != null) {
+                nodeQueue.add(node.getLeft());
+
+            }
+            if (node.getRight() != null) {
+                nodeQueue.add(node.getRight());
+            }
+        }
+        for (List<Integer> l : list) {
+            for (Integer i : l) {
+                System.out.printf(" " + i + " ");
+            }
+            System.out.println("");
+        }
+
         return list;
     }
 }

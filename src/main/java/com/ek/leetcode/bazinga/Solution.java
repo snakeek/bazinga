@@ -1,5 +1,7 @@
 package com.ek.leetcode.bazinga;
 
+import com.ek.leetcode.bazinga.list.ListNode;
+
 public class Solution {
     public static void main(String[] args) {
         ListNode l1 = new ListNode(2);

@@ -2,8 +2,8 @@ package com.ek.leetcode.bazinga.btree.rookie;
 
 import com.ek.leetcode.bazinga.algorithm.TreeNode;
 
-import java.util.*;
-import java.util.concurrent.LinkedBlockingQueue;
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * Copyright (C), 2019-2021
@@ -16,29 +16,71 @@ public class CommonBTree {
 
     public static void main(String[] args) {
 
+
+//        输入：root = [1,2,3,null,null,4,5]
+//        输出：[1,2,3,null,null,4,5]
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+        root.left.left = null;
+        root.left.right = null;
+        root.right.left = new TreeNode(4);
+        root.right.right = new TreeNode(5);
+        System.out.println(serialize(root));
     }
 
     public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        Set<Integer> rootSet = new HashSet<>();
-        Queue<TreeNode> queue = new LinkedBlockingQueue<>();
-        Stack<TreeNode> stackP = new Stack<>();
-        Stack<TreeNode> stackQ = new Stack<>();
+        if (root == null || root.getVal() == p.getVal() || root.getVal() == q.getVal()) {
+            return root;
+        }
+
+        TreeNode left = lowestCommonAncestor(root.left, p, q);
+        TreeNode right = lowestCommonAncestor(root.right, p, q);
+
+        if (left == null && right == null) {
+            return null;
+        }
+        if (left != null && right != null) {
+            return root;
+        }
+
+        return left == null?right:left;
     }
 
-    private static int traval(TreeNode root, TreeNode p, TreeNode q, Stack<TreeNode> stackP, Stack<TreeNode> stackQ) {
+    // Encodes a tree to a single string.
+    public static String serialize(TreeNode root) {
         if (root == null) {
-            return -1;
+            return "[]";
         }
-        stackP.add(root);
-        stackQ.add(root);
-        if (root.getVal() == q.getVal()) {
-            return 1;
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        StringBuilder str = new StringBuilder();
+        str.append("[");
+        int levelCount = 1;
+        int count;
+        TreeNode node;
+        while (!queue.isEmpty()) {
+            count = levelCount;
+            while (count > 0) {
+                node = queue.poll();
+                if (node == null) {//TODO wrong!
+                    str.append("null,");
+                } else {
+                    queue.add(node.left);
+                    queue.add(node.right);
+                    str.append(node.val).append(",");
+                }
+                count--;
+            }
+            levelCount *= 2;
         }
-        if (root.getVal() == q.getVal()) {
-            return 2;
-        }
-        int result = traval(root.getLeft(), p, q, stackP, stackQ);
+        String returnStr = str.toString();
+        returnStr = returnStr.substring(0, returnStr.length()-1) + "]";
+        return returnStr;
+    }
 
-
+    // Decodes your encoded data to tree.
+    public TreeNode deserialize(String data) {
+        return null;
     }
 }

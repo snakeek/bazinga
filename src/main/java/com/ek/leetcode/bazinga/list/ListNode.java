@@ -1,4 +1,4 @@
-package com.ek.leetcode.bazinga;
+package com.ek.leetcode.bazinga.list;
 
 /**
  * Copyright (C), 2019-2020
@@ -8,9 +8,11 @@ package com.ek.leetcode.bazinga;
  * Description: dd
  */
 public class ListNode {
-    int val;
-    ListNode next;
-    ListNode(int x) {
+    public int val;
+    public ListNode next;
+    public ListNode(){}
+
+    public ListNode(int x) {
         this.val = x;
     }
 }

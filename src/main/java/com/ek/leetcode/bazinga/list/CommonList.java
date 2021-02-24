@@ -29,6 +29,14 @@ public class CommonList {
 
 //        输入：l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
 //        输出：[8,9,9,9,0,0,0,1]
+
+        ListNode ll = new ListNode(1);
+        ll.next = new ListNode(2);
+//        ll.next.next = new ListNode(3);
+//        ll.next.next.next = new ListNode(4);
+//        ll.next.next.next.next = new ListNode(5);
+        removeNthFromEnd(ll, 2);
+        System.out.println("==");
     }
 
     public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
@@ -118,5 +126,76 @@ public class CommonList {
             node.next = new ListNode(add);
         }
         return head;
+    }
+
+    public void deleteNode(ListNode node) {
+        node.val = node.next.val;
+        node.next = node.next.next;
+    }
+
+    public static ListNode removeNthFromEnd(ListNode head, int n) {
+        if (head == null || head.next == null) {
+            return null;
+        }
+        int res = findFromEnd(head, n);
+        if (res == 0) {
+            return head.next;
+        }
+        return head;
+    }
+
+    private static int findFromEnd(ListNode node, int n) {
+        int res;
+        if (node.next != null) {
+            res = findFromEnd(node.next, n);
+            if (res == 0) {
+                node.next = node.next.next;
+            }
+        } else {
+            res = n;
+        }
+
+        return (res-1);
+    }
+
+    static ListNode front;
+    public static boolean isPalindrome(ListNode head) {
+        front = head;
+        return checkNode(front);
+    }
+
+    private static boolean checkNode(ListNode node) {
+        if (node == null) {
+            return true;
+        }
+        boolean res = checkNode(node.next)&&node.val == front.val;
+        front = front.next;
+        return res;
+    }
+
+    public static boolean isPalindromeNormal(ListNode head) {
+
+
+
+        //fast slow pointer
+        return false;
+    }
+
+    public static boolean hasCycle(ListNode head) {
+        if (head == null || head.next == null) {
+            return false;
+        }
+
+        ListNode fast = head;
+        ListNode slow = head;
+
+        while (slow != null && fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            if (slow == fast) {
+                return true;
+            }
+        }
+        return false;
     }
 }

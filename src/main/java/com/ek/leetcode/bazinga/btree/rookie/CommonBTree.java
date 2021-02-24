@@ -27,6 +27,17 @@ public class CommonBTree {
         root.right.left = new TreeNode(4);
         root.right.right = new TreeNode(5);
         System.out.println(serialize(root));
+
+//        [5,4,6,null,null,3,7]
+        TreeNode test = new TreeNode(5);
+        test.left = new TreeNode(4);
+        test.right = new TreeNode(6);
+        test.left.left = null;
+        test.left.right = null;
+        test.right.left = new TreeNode(3);
+        test.right.right = new TreeNode(7);
+
+        System.out.println("" + isValidBST(test));
     }
 
     public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
@@ -82,5 +93,19 @@ public class CommonBTree {
     // Decodes your encoded data to tree.
     public TreeNode deserialize(String data) {
         return null;
+    }
+
+    public static boolean isValidBST(TreeNode root) {
+        return isValidBST(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+    }
+
+    private static boolean isValidBST(TreeNode node, int min, int max) {
+        if (node == null) {
+            return true;
+        }
+        if (min < node.val && node.val < max) {
+            return isValidBST(node.left, min, node.val) && isValidBST(node.right, node.val, max);
+        }
+        return false;
     }
 }

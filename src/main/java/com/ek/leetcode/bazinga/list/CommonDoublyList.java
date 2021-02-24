@@ -1,5 +1,8 @@
 package com.ek.leetcode.bazinga.list;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Copyright (C), 2019-2021
  * FileName: CommonDoublyList
@@ -14,7 +17,16 @@ public class CommonDoublyList {
     }
 
     public Node flatten(Node head) {
+        if (head == null) {
+            return head;
+        }
+        if (head.child != null) {
+            
+        }
+        flatten(head.child);
+        flatten(head.next);
 
+        return null;
     }
 }
 

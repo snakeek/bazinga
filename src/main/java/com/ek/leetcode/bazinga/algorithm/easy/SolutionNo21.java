@@ -1,6 +1,6 @@
 package com.ek.leetcode.bazinga.algorithm.easy;
 
-import com.ek.leetcode.bazinga.algorithm.ListNode;
+import com.ek.leetcode.bazinga.list.ListNode;
 
 /**
  * Copyright (C), 2019-2020

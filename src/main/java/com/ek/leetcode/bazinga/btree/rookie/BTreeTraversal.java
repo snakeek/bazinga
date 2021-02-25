@@ -93,26 +93,34 @@ public class BTreeTraversal {
 
     private List<List<Integer>> levelOrder(TreeNode root) {
         List<List<Integer>> list = new ArrayList<>();
-        Queue<TreeNode> nodeQueue = new LinkedBlockingQueue<>();
-        nodeQueue.add(root);
+        if (root == null) {
+            return list;
+        }
+        Queue<Queue<TreeNode>> nodeQueue = new LinkedBlockingQueue<>();
+        Queue<TreeNode> levelQueue = new LinkedBlockingQueue<>();
+        levelQueue.add(root);
+        nodeQueue.add(levelQueue);
         TreeNode node;
-        int levelCounter = 1;
+        Queue<TreeNode> tempQueue;
+        Queue<TreeNode> nextLevelQueue = new LinkedBlockingQueue<>();
         while (!nodeQueue.isEmpty()) {
             List<Integer> levelList = new ArrayList<>();
-            node = nodeQueue.poll();
-            levelCounter--;
-            levelList.add(node.getVal());
-            if (levelCounter == 0) {
-                list.add(levelList);
-                list = new ArrayList<>();
+            tempQueue = nodeQueue.poll();
+            while (!tempQueue.isEmpty()) {
+                node = tempQueue.poll();
+                levelList.add(node.getVal());
+                if (node.getLeft() != null) {
+                    nextLevelQueue.add(node.getLeft());
+                }
+                if (node.getRight() != null) {
+                    nextLevelQueue.add(node.getRight());
+                }
             }
-            if (node.getLeft() != null) {
-                nodeQueue.add(node.getLeft());
-
+            list.add(levelList);
+            if (nextLevelQueue.size() > 0) {
+                nodeQueue.add(nextLevelQueue);
             }
-            if (node.getRight() != null) {
-                nodeQueue.add(node.getRight());
-            }
+            nextLevelQueue = new LinkedBlockingQueue<>();
         }
         for (List<Integer> l : list) {
             for (Integer i : l) {

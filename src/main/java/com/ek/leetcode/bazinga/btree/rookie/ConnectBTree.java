@@ -19,7 +19,7 @@ public class ConnectBTree {
         if (root == null) {
             return root;
         }
-
+        return null;
     }
 
     private void connectNode(TreeNodeSP left, TreeNodeSP right) {

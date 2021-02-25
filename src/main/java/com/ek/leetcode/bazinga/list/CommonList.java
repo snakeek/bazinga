@@ -174,7 +174,12 @@ public class CommonList {
     }
 
     public static boolean isPalindromeNormal(ListNode head) {
-
+        ListNode slow = head;
+        ListNode fast = head;
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
 
 
         //fast slow pointer

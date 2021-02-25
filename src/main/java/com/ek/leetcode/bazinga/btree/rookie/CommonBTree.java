@@ -60,35 +60,22 @@ public class CommonBTree {
 
     // Encodes a tree to a single string.
     public static String serialize(TreeNode root) {
-        if (root == null) {
-            return "[]";
-        }
-        Queue<TreeNode> queue = new LinkedList<>();
-        queue.add(root);
-        StringBuilder str = new StringBuilder();
-        str.append("[");
-        int levelCount = 1;
-        int count;
-        TreeNode node;
-        while (!queue.isEmpty()) {
-            count = levelCount;
-            while (count > 0) {
-                node = queue.poll();
-                if (node == null) {//TODO wrong!
-                    str.append("null,");
-                } else {
-                    queue.add(node.left);
-                    queue.add(node.right);
-                    str.append(node.val).append(",");
-                }
-                count--;
-            }
-            levelCount *= 2;
-        }
-        String returnStr = str.toString();
-        returnStr = returnStr.substring(0, returnStr.length()-1) + "]";
-        return returnStr;
+        StringBuilder sb = new StringBuilder();
+        serialize(root, sb);
+        return sb.toString();
     }
+
+    private static void serialize(TreeNode node, StringBuilder sb) {
+        if (node == null) {
+            sb.append("#").append(",");
+            return;
+        }
+        sb.append(node.val).append(",");
+
+        serialize(node.left, sb);
+        serialize(node.right, sb);
+    }
+
 
     // Decodes your encoded data to tree.
     public TreeNode deserialize(String data) {

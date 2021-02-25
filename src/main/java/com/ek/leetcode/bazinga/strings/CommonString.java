@@ -1,5 +1,9 @@
 package com.ek.leetcode.bazinga.strings;
 
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * Copyright (C), 2019-2021
  * FileName: CommonString
@@ -12,6 +16,9 @@ public class CommonString {
         int a = 1534236469;
         System.out.println(reverse(a));
         System.out.println(reverse(a * -1));
+
+        System.out.println("===");
+        System.out.println(lengthOfLongestSubstring(" "));
     }
 
     public static int reverse(int x) {
@@ -35,5 +42,36 @@ public class CommonString {
             return 0;
         }
         return (int)num;
+    }
+
+    /**
+     * 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
+     * @param s
+     * @return
+     */
+    public static int lengthOfLongestSubstring(String s) {
+        if ("".equals(s)) {
+            return 0;
+        }
+        char[] chars = s.toCharArray();
+        int right = 0;
+        int max = 0;
+        Queue<Character> queue = new LinkedList<>();
+        while (right < chars.length) {
+            if (!queue.contains(chars[right])) {
+                queue.add(chars[right]);
+            } else {
+                queue.add(chars[right]);
+                char c = queue.poll();
+                while (c != chars[right]) {
+                    c = queue.poll();
+                }
+            }
+            if (max < queue.size()) {
+                max = queue.size();
+            }
+            right++;
+        }
+        return max;
     }
 }

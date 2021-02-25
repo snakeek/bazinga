@@ -63,12 +63,16 @@ public class DynamicProGramming {
         int[] dp = new int[nums.length];
         if (nums.length == 1) {
             dp[0] = nums[0];
+            return dp[0];
         }
         if (nums.length == 2) {
             dp[1] = Math.max(dp[0], nums[1]);
+            return dp[1];
         }
         for (int i = 2; i < nums.length; i++) {
 
         }
+
+        return -1;
     }
 }

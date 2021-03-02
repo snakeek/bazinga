@@ -12,6 +12,12 @@ public class DynamicProGramming {
 
         System.out.println(climbStairs(5));
         System.out.println(maxProfit(new int[]{7,1,5,3,6,4}));
+
+        System.out.println("==rob===");
+        System.out.println(rob(new int[]{2,7,9,3,1}));
+
+        System.out.println("===max sub array===");
+        System.out.println(maxSubArray(new int[]{-2}));
     }
 
     /*
@@ -60,15 +66,52 @@ public class DynamicProGramming {
      * 给定一个代表每个房屋存放金额的非负整数数组，计算你 不触动警报装置的情况下 ，一夜之内能够偷窃到的最高金额。
      */
     public static int rob(int[] nums) {
+        int max = 0;
         int[] dp = new int[nums.length];
-        if (nums.length == 1) {
+        if (nums.length >= 1) {
             dp[0] = nums[0];
+            max = dp[0];
         }
-        if (nums.length == 2) {
+        if (nums.length >= 2) {
             dp[1] = Math.max(dp[0], nums[1]);
+            max = dp[1];
         }
         for (int i = 2; i < nums.length; i++) {
-
+            dp[i] = Math.max(dp[i-2] + nums[i], dp[i-1]);
+            if (dp[i] > max) {
+                max = dp[i];
+            }
         }
+        return max;
+    }
+
+    /**
+     * 给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
+     *
+     * 输入：nums = [-2,1,-3,4,-1,2,1,-5,4]
+     * 输出：6
+     * 解释：连续子数组 [4,-1,2,1] 的和最大，为 6 。
+     *
+     * @param nums
+     * @return
+     */
+    public static int maxSubArray(int[] nums) {
+        int[] dp = new int[nums.length];
+        if (nums.length == 1) {
+            return nums[0];
+        }
+        dp[0] = nums[0];
+        int max = nums[0];
+        for (int i = 1; i < nums.length; i++) {
+            if (dp[i-1] > 0) {
+                dp[i] = dp[i-1] + nums[i];
+            } else {
+                dp[i] = nums[i];
+            }
+            if (dp[i] > max) {
+                max = dp[i];
+            }
+        }
+        return max;
     }
 }

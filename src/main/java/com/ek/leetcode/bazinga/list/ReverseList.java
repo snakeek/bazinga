@@ -1,5 +1,7 @@
 package com.ek.leetcode.bazinga.list;
 
+import com.ek.leetcode.bazinga.ListNode;
+
 public class ReverseList {
     public static void main(String[] args) {
         ListNode head = new ListNode(1);

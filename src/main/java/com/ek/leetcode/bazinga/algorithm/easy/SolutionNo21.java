@@ -1,6 +1,6 @@
 package com.ek.leetcode.bazinga.algorithm.easy;
 
-import com.ek.leetcode.bazinga.list.ListNode;
+import com.ek.leetcode.bazinga.ListNode;
 
 /**
  * Copyright (C), 2019-2020
@@ -16,7 +16,7 @@ public class SolutionNo21 {
     }
 
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
-        ListNode head = new ListNode();
+        ListNode head = new ListNode(0);
         while (true) {
             if (l1 == null && l2 == null) {
                 return head.next;

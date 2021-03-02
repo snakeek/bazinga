@@ -74,4 +74,33 @@ public class CommonString {
         }
         return max;
     }
+
+    /**
+     * 编写一个函数来查找字符串数组中的最长公共前缀。
+     * 如果不存在公共前缀，返回空字符串 ""。
+     * @param strs
+     * @return
+     */
+    public String longestCommonPrefix(String[] strs) {
+        if (strs == null || strs.length == 0) {
+            return "";
+        }
+        if (strs.length == 1) {
+            return strs[0];
+        }
+        Map<Integer, Character> map = new HashMap<>();
+        int index = 0;
+        while (index < strs[0].length()) {
+            map.put(index, strs[0].charAt(index));
+            for (int i = 1; i < strs.length; i++) {
+                if (index >= strs[i].length()) {
+                    index = strs[0].length();
+                }
+
+
+            }
+            index++;
+        }
+
+    }
 }

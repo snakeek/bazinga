@@ -17,7 +17,9 @@ public class DynamicProGramming {
         System.out.println(rob(new int[]{2,7,9,3,1}));
 
         System.out.println("===max sub array===");
-        System.out.println(maxSubArray(new int[]{-2}));
+        System.out.println(maxSubArray(new int[]{-2,1,-3,4,-1,2,1,-5,4}));
+        System.out.println("===max same sub string===");
+        System.out.println(getMaxSameSubString("abbca", "bbca"));
     }
 
     /*
@@ -96,22 +98,56 @@ public class DynamicProGramming {
      * @return
      */
     public static int maxSubArray(int[] nums) {
-        int[] dp = new int[nums.length];
         if (nums.length == 1) {
             return nums[0];
         }
-        dp[0] = nums[0];
+        int pre = nums[0];
         int max = nums[0];
         for (int i = 1; i < nums.length; i++) {
-            if (dp[i-1] > 0) {
-                dp[i] = dp[i-1] + nums[i];
-            } else {
-                dp[i] = nums[i];
+            if (pre > 0) {
+                nums[i] = pre + nums[i];
             }
-            if (dp[i] > max) {
-                max = dp[i];
+            if (nums[i] > max) {
+                max = nums[i];
             }
+            pre = nums[i];
         }
         return max;
+    }
+
+    /**
+     * 获取两个字符串的最长公共子串
+     * @param str1
+     * @param str2
+     * @return
+     */
+    public static String getMaxSameSubString(String str1, String str2) {
+        if (str1 == null || str1.length() == 0) {
+            return "";
+        }
+        if (str2 == null || str2.length() == 0) {
+            return "";
+        }
+        int[][] dp = new int[str1.length()][str2.length()];
+        int max = 0;
+
+        for (int i = 0; i < str1.length(); i++) {
+            for (int j = 0; j < str2.length(); j++) {
+                if (str1.charAt(i) != str2.charAt(j)) {
+                    dp[i][j] = 0;
+                } else {
+                    if (i == 0 || j == 0) {
+                        dp[i][j] = 1;
+                    } else {
+                        dp[i][j] = dp[i - 1][j - 1] + 1;
+                    }
+                }
+                if (dp[i][j] > max) {
+                    max = dp[i][j];
+                }
+            }
+        }
+
+        return "" + max;
     }
 }

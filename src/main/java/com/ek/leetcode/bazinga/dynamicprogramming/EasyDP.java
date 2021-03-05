@@ -41,7 +41,9 @@ public class EasyDP {
         dp[2] = 2;
         dp[3] = 4;
         for (int i = 4; i <= n; i++) {
-            dp[4] =
+//            dp[4] =
         }
+
+        return -1;
     }
 }

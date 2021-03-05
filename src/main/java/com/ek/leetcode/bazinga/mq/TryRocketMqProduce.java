@@ -16,18 +16,21 @@ import org.apache.rocketmq.remoting.common.RemotingHelper;
  * 2.异步发送消息:异步传输通常用于响应时间敏感的业务场景。
  * 3.以单向模式发送消息:单向传输用于需要中等可靠性的情况，例如日志收集。
  */
-public class TryRocketMq {
+public class TryRocketMqProduce {
     public static void main(String[] args) throws Exception {
         //Instantiate with a producer group name.
-        DefaultMQProducer producer = new DefaultMQProducer("my_rocketmq_group");
-        //Specify name server addresses.
-        producer.setNamesrvAddr("127.0.0.1:9876");
+        DefaultMQProducer producer = new
+                DefaultMQProducer("please_rename_unique_group_name");
+        // Specify name server addresses.
+        producer.setNamesrvAddr("localhost:9876");
         //Launch the instance.
         producer.start();
-        for (int i = 0; i < 1; i++) {
+        for (int i = 0; i < 100; i++) {
             //Create a message instance, specifying topic, tag and message body.
-            Message msg = new Message("RocketMqTopicTest" /* Topic */,"TagTest" /* Tag */,
-                    ("Hello RocketMQ " + i).getBytes(RemotingHelper.DEFAULT_CHARSET) /* Message body */
+            Message msg = new Message("TopicTest" /* Topic */,
+                    "TagA" /* Tag */,
+                    ("Hello RocketMQ " +
+                            i).getBytes(RemotingHelper.DEFAULT_CHARSET) /* Message body */
             );
             //Call send message to deliver message to one of brokers.
             SendResult sendResult = producer.send(msg);

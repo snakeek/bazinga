@@ -10,14 +10,14 @@ public class TestEasyString01 {
 
     public void reverseString(char[] s) {
         if (s == null || s.length == 1) {
-            return ;
+            return;
         }
         int mid = s.length / 2;
         char tmp;
         for (int i = 0; i < mid; i++) {
             tmp = s[i];
-            s[i] = s[s.length-1-i];
-            s[s.length-1-i] = tmp;
+            s[i] = s[s.length - 1 - i];
+            s[s.length - 1 - i] = tmp;
         }
     }
 }

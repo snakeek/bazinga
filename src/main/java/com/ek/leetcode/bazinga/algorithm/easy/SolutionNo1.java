@@ -15,7 +15,7 @@ public class SolutionNo1 {
         int indexB;
         for (int i = 0; i < nums.length; i++) {
             indexA = i;
-            for (int j = i+1; j < nums.length; j++) {
+            for (int j = i + 1; j < nums.length; j++) {
                 indexB = j;
                 if (nums[indexA] + nums[indexB] == target) {
                     return new int[]{indexA, indexB};

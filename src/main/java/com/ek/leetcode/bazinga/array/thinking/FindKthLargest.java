@@ -22,15 +22,15 @@ public class FindKthLargest {
             }
             head++;
         }
-        return nums[head-1];
+        return nums[head - 1];
     }
 
     public static void main(String[] args) {
         FindKthLargest findKthLargest = new FindKthLargest();
-        int[] first = new int[]{3,2,1,5,6,4};
+        int[] first = new int[]{3, 2, 1, 5, 6, 4};
         //5
         System.out.println(findKthLargest.findKthLargest(first, 2));
-        int[] second = new int[]{3,2,3,1,2,4,5,5,6};
+        int[] second = new int[]{3, 2, 3, 1, 2, 4, 5, 5, 6};
         //4
         System.out.println(findKthLargest.findKthLargest(second, 4));
     }

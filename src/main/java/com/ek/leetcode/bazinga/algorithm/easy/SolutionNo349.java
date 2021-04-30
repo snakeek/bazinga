@@ -15,7 +15,7 @@ import java.util.*;
 public class SolutionNo349 {
     public static void main(String[] args) {
         SolutionNo349 s = new SolutionNo349();
-        int[] arr = s.intersection(new int[]{4,5,9}, new int[]{9,4,4,9});
+        int[] arr = s.intersection(new int[]{4, 5, 9}, new int[]{9, 4, 4, 9});
         for (int a : arr) {
             System.out.println(a);
         }
@@ -29,14 +29,14 @@ public class SolutionNo349 {
 
         for (int i = 0; i < loop; i++) {
             if (i < nums1.length) {
-                if (map.containsKey(nums1[i])&&(map.get(nums1[i]) == 2)&&!result.contains(nums1[i])) {
+                if (map.containsKey(nums1[i]) && (map.get(nums1[i]) == 2) && !result.contains(nums1[i])) {
                     result.add(nums1[i]);
                 } else {
                     map.put(nums1[i], 1);
                 }
             }
             if (i < nums2.length) {
-                if (map.containsKey(nums2[i])&&(map.get(nums2[i]) == 1)&&!result.contains(nums2[i])) {
+                if (map.containsKey(nums2[i]) && (map.get(nums2[i]) == 1) && !result.contains(nums2[i])) {
                     result.add(nums2[i]);
                 } else {
                     map.put(nums2[i], 2);
@@ -47,7 +47,7 @@ public class SolutionNo349 {
         int i = 0;
         Iterator ite = result.iterator();
         while (ite.hasNext()) {
-            arr[i] = (int)ite.next();
+            arr[i] = (int) ite.next();
             i++;
         }
         return arr;

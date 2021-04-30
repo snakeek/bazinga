@@ -3,7 +3,7 @@ package com.ek.leetcode.bazinga.algorithm.test_easy;
 public class TestEasyArray02 {
     public static void main(String[] args) {
         TestEasyArray02 t = new TestEasyArray02();
-        System.out.println(t.maxProfit(new int[]{7,6,4,3,1}));
+        System.out.println(t.maxProfit(new int[]{7, 6, 4, 3, 1}));
     }
 
     public int maxProfit(int[] prices) {

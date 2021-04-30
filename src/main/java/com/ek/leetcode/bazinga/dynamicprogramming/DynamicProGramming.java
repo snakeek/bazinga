@@ -11,13 +11,13 @@ public class DynamicProGramming {
     public static void main(String[] args) {
 
         System.out.println(climbStairs(5));
-        System.out.println(maxProfit(new int[]{7,1,5,3,6,4}));
+        System.out.println(maxProfit(new int[]{7, 1, 5, 3, 6, 4}));
 
         System.out.println("==rob===");
-        System.out.println(rob(new int[]{2,7,9,3,1}));
+        System.out.println(rob(new int[]{2, 7, 9, 3, 1}));
 
         System.out.println("===max sub array===");
-        System.out.println(maxSubArray(new int[]{-2,1,-3,4,-1,2,1,-5,4}));
+        System.out.println(maxSubArray(new int[]{-2, 1, -3, 4, -1, 2, 1, -5, 4}));
         System.out.println("===max same sub string===");
         System.out.println(getMaxSameSubString("abbca", "bbca"));
     }
@@ -34,11 +34,11 @@ public class DynamicProGramming {
         if (n == 2) {
             return 2;
         }
-        int[] dp = new int[n+1];
+        int[] dp = new int[n + 1];
         dp[1] = 1;
         dp[2] = 2;
         for (int i = 3; i <= n; i++) {
-            dp[i] = dp[i-1] + dp[i-2];
+            dp[i] = dp[i - 1] + dp[i - 2];
         }
         return dp[n];
     }
@@ -79,7 +79,7 @@ public class DynamicProGramming {
             max = dp[1];
         }
         for (int i = 2; i < nums.length; i++) {
-            dp[i] = Math.max(dp[i-2] + nums[i], dp[i-1]);
+            dp[i] = Math.max(dp[i - 2] + nums[i], dp[i - 1]);
             if (dp[i] > max) {
                 max = dp[i];
             }
@@ -89,7 +89,7 @@ public class DynamicProGramming {
 
     /**
      * 给定一个整数数组 nums ，找到一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
-     *
+     * <p>
      * 输入：nums = [-2,1,-3,4,-1,2,1,-5,4]
      * 输出：6
      * 解释：连续子数组 [4,-1,2,1] 的和最大，为 6 。
@@ -117,6 +117,7 @@ public class DynamicProGramming {
 
     /**
      * 获取两个字符串的最长公共子串
+     *
      * @param str1
      * @param str2
      * @return

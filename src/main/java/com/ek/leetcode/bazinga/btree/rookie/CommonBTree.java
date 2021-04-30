@@ -55,7 +55,7 @@ public class CommonBTree {
             return root;
         }
 
-        return left == null?right:left;
+        return left == null ? right : left;
     }
 
     // Encodes a tree to a single string.

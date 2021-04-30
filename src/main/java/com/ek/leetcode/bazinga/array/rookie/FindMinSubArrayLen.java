@@ -7,23 +7,23 @@ package com.ek.leetcode.bazinga.array.rookie;
  * Date:     2021/2/18 6:51 下午
  * Description:
  * 给定一个含有 n 个正整数的数组和一个正整数 target 。
- *
+ * <p>
  * 找出该数组中满足其和 ≥ target 的长度最小的 连续子数组 [numsl, numsl+1, ..., numsr-1, numsr] ，并返回其长度。如果不存在符合条件的子数组，返回 0 。
- *
+ * <p>
  * 示例 1：
- *
+ * <p>
  * 输入：target = 7, nums = [2,3,1,2,4,3]
  * 输出：2
  * 解释：子数组 [4,3] 是该条件下的长度最小的子数组。
  * 示例 2：
- *
+ * <p>
  * 输入：target = 4, nums = [1,4,4]
  * 输出：1
  * 示例 3：
- *
+ * <p>
  * 输入：target = 11, nums = [1,1,1,1,1,1,1,1]
  * 输出：0
- *
+ * <p>
  * 作者：力扣 (LeetCode)
  * 链接：https://leetcode-cn.com/leetbook/read/all-about-array/x9gogt/
  * 来源：力扣（LeetCode）
@@ -31,11 +31,11 @@ package com.ek.leetcode.bazinga.array.rookie;
  */
 public class FindMinSubArrayLen {
     public static void main(String[] args) {
-        int[] nums = new int[]{2,3,1,2,4,3};
+        int[] nums = new int[]{2, 3, 1, 2, 4, 3};
         System.out.println(minSubArrayLen(7, nums));
-        nums = new int[]{1,4,4};
+        nums = new int[]{1, 4, 4};
         System.out.println(minSubArrayLen(1, nums));
-        nums = new int[]{1,1,1,1,1,1,1,1};
+        nums = new int[]{1, 1, 1, 1, 1, 1, 1, 1};
         System.out.println(minSubArrayLen(11, nums));
     }
 

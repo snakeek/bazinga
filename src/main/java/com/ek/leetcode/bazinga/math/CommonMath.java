@@ -21,12 +21,12 @@ public class CommonMath {
             list.stream().forEach(System.out::print);
         }
 
-        missingNumber(new int[]{9,6,4,2,3,5,7,0,1});
+        missingNumber(new int[]{9, 6, 4, 2, 3, 5, 7, 0, 1});
     }
 
     public static int hammingDistance(int x, int y) {
         int distance = 0;
-        int tmp = x^y;
+        int tmp = x ^ y;
         while (tmp != 0) {
             distance++;
             tmp = tmp & (tmp - 1);
@@ -36,6 +36,7 @@ public class CommonMath {
 
     /**
      * 给定一个非负整数 numRows，生成杨辉三角的前 numRows 行。
+     *
      * @param numRows
      * @return
      */
@@ -56,13 +57,13 @@ public class CommonMath {
             lists.add(list);
         }
         for (int i = 3; i <= numRows; i++) {
-            list = lists.get(i-2);
+            list = lists.get(i - 2);
             List<Integer> newList = new ArrayList<>();
-            for (int j = 0; j < list.size()+1; j++) {
+            for (int j = 0; j < list.size() + 1; j++) {
                 if (j == 0 || j == list.size()) {
                     newList.add(1);
                 } else {
-                    newList.add(list.get(j-1)+list.get(j));
+                    newList.add(list.get(j - 1) + list.get(j));
                 }
             }
             lists.add(newList);
@@ -72,7 +73,7 @@ public class CommonMath {
     }
 
     public static int missingNumber(int[] nums) {
-        if(nums.length <= 0){
+        if (nums.length <= 0) {
             return 0;
         }
         int reduce = 0;

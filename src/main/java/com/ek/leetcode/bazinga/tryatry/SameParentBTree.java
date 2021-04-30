@@ -20,6 +20,6 @@ public class SameParentBTree {
         if (left != null && right != null) {
             return root;
         }
-        return left == null?right:left;
+        return left == null ? right : left;
     }
 }

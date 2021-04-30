@@ -7,16 +7,16 @@ package com.ek.leetcode.bazinga.array.rookie;
  * Date:     2021/2/18 4:05 下午
  * Description:
  * 编写一个函数，以字符串作为输入，反转该字符串中的元音字母。
- *
+ * <p>
  * 示例 1：
- *
+ * <p>
  * 输入："hello"
  * 输出："holle"
  * 示例 2：
- *
+ * <p>
  * 输入："leetcode"
  * 输出："leotcede"
- *
+ * <p>
  * 作者：力扣 (LeetCode)
  * 链接：https://leetcode-cn.com/leetbook/read/all-about-array/x93lce/
  * 来源：力扣（LeetCode）

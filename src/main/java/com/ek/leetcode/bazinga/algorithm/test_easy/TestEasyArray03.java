@@ -7,7 +7,7 @@ public class TestEasyArray03 {
 
     public void rotate(int[] nums, int k) {
 
-        for (int i = nums.length -1; i >= (nums.length - k); i--) {
+        for (int i = nums.length - 1; i >= (nums.length - k); i--) {
 
         }
         int len = nums.length;

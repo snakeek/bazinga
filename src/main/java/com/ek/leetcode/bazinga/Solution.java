@@ -57,10 +57,10 @@ public class Solution {
             }
 
             if (returnNode == null) {
-                returnNode = new ListNode(temp%10);
+                returnNode = new ListNode(temp % 10);
                 index = returnNode;
             } else {
-                index.next = new ListNode(temp%10);
+                index.next = new ListNode(temp % 10);
                 index = index.next;
             }
             if (temp >= 10) {

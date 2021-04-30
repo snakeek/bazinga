@@ -67,19 +67,19 @@ public class RemoveRepeatFromArrayOrdered {
 
     public static void main(String[] args) {
         RemoveRepeatFromArrayOrdered test = new RemoveRepeatFromArrayOrdered();
-        int[] arr = new int[]{0,0,1,1,1,2,2,3,3,4};
+        int[] arr = new int[]{0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
         System.out.println(test.removeDuplicates(arr));
         for (int num : arr) {
             System.out.print(num);
         }
         System.out.println("==========================================");
-        int[] nums = new int[]{0,0,1,1,1,1,2,3,3};
+        int[] nums = new int[]{0, 0, 1, 1, 1, 1, 2, 3, 3};
         System.out.println(test.removeDuplicatesTwice(nums));
         for (int num : nums) {
             System.out.print(num);
         }
 
-        int[] t = new int[]{1,2};
+        int[] t = new int[]{1, 2};
         int n = 0;
         System.out.println("=============================");
         System.out.println(t[n++]);

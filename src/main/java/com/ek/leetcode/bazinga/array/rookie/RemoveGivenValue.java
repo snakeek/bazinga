@@ -35,7 +35,7 @@ public class RemoveGivenValue {
 
     public static void main(String[] args) {
         RemoveGivenValue test = new RemoveGivenValue();
-        int[] arr = new int[]{0,1,2,2,3,0,4,2};
+        int[] arr = new int[]{0, 1, 2, 2, 3, 0, 4, 2};
         System.out.println(test.removeElement(arr, 2));
         for (int num : arr) {
             System.out.println(num);

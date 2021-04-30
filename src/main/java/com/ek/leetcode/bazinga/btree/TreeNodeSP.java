@@ -13,7 +13,8 @@ public class TreeNodeSP {
     public TreeNodeSP right;
     public TreeNodeSP next;
 
-    public TreeNodeSP() {}
+    public TreeNodeSP() {
+    }
 
     public TreeNodeSP(int _val) {
         val = _val;

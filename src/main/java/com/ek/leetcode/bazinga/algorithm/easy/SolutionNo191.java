@@ -17,7 +17,7 @@ public class SolutionNo191 {
     public int hammingWeight(int n) {
         int num = 0;
         for (int i = 0; i < 32; i++) {
-            if ((n>>i & 1) == 1) {
+            if ((n >> i & 1) == 1) {
                 num++;
             }
         }
@@ -28,7 +28,7 @@ public class SolutionNo191 {
         int sum = 0;
         while (n != 0) {
             sum++;
-            n = n & (n-1);
+            n = n & (n - 1);
         }
         return sum;
     }

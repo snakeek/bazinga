@@ -11,8 +11,8 @@ package com.ek.leetcode.bazinga.algorithm.easy;
 public class SolutionNo88 {
     public static void main(String[] args) {
         SolutionNo88 s = new SolutionNo88();
-        int[] nums = new int[]{1,2,3,0,0,0};
-        s.merge(nums, 3, new int[]{2,5,6}, 3);
+        int[] nums = new int[]{1, 2, 3, 0, 0, 0};
+        s.merge(nums, 3, new int[]{2, 5, 6}, 3);
         for (int a : nums) {
             System.out.println(a);
         }
@@ -30,13 +30,13 @@ public class SolutionNo88 {
         }
 
         for (int i = 0; i < nums1.length; i++) {
-            if (m > 0 && n > 0 && nums1[m-1] > nums2[n-1]) {
-                nums1[nums1.length - 1 - i] = nums1[m-1];
-                nums1[m-1] = 0;
+            if (m > 0 && n > 0 && nums1[m - 1] > nums2[n - 1]) {
+                nums1[nums1.length - 1 - i] = nums1[m - 1];
+                nums1[m - 1] = 0;
                 m--;
             } else if (n > 0) {
-                nums1[nums1.length -1 -i] = nums2[n-1];
-                nums2[n-1] = 0;
+                nums1[nums1.length - 1 - i] = nums2[n - 1];
+                nums2[n - 1] = 0;
                 n--;
             }
         }

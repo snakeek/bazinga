@@ -25,7 +25,7 @@ public class SortColors {
             } else if (nums[head] < 1) {
                 head++;
                 jump = 1;
-            } else if ((head+jump) <= tail) {
+            } else if ((head + jump) <= tail) {
                 temp = nums[head];
                 nums[head] = nums[head + jump];
                 nums[head + jump] = temp;
@@ -37,7 +37,7 @@ public class SortColors {
     }
 
     public static void main(String[] args) {
-        int[] arr = new int[]{1,0,0};
+        int[] arr = new int[]{1, 0, 0};
         SortColors sortColors = new SortColors();
         sortColors.sortColors(arr);
         for (Integer num : arr) {

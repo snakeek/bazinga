@@ -22,8 +22,8 @@ public class CommonString {
         System.out.println(lengthOfLongestSubstring(" "));
 
         System.out.println("====");
-        System.out.println(longestCommonPrefix(new String[]{"flower","flow","flight"}));
-        System.out.println(longestCommonPrefix(new String[]{"dog","racecar","car"}));
+        System.out.println(longestCommonPrefix(new String[]{"flower", "flow", "flight"}));
+        System.out.println(longestCommonPrefix(new String[]{"dog", "racecar", "car"}));
 
     }
 
@@ -38,7 +38,7 @@ public class CommonString {
             flag = true;
         }
         while (x > 0) {
-            num = (x%10) + num * 10;
+            num = (x % 10) + num * 10;
             x = x / 10;
         }
         if (flag) {
@@ -47,11 +47,12 @@ public class CommonString {
         if (num > Integer.MAX_VALUE || num < Integer.MIN_VALUE) {
             return 0;
         }
-        return (int)num;
+        return (int) num;
     }
 
     /**
      * 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度。
+     *
      * @param s
      * @return
      */
@@ -84,6 +85,7 @@ public class CommonString {
     /**
      * 编写一个函数来查找字符串数组中的最长公共前缀。
      * 如果不存在公共前缀，返回空字符串 ""。
+     *
      * @param strs
      * @return
      */
@@ -119,6 +121,7 @@ public class CommonString {
      * 输入：s = "babad"
      * 输出："bab"
      * 解释："aba" 同样是符合题意的答案。
+     *
      * @param s
      * @return
      */

@@ -21,7 +21,7 @@ public class CommonDoublyList {
             return head;
         }
         if (head.child != null) {
-            
+
         }
         flatten(head.child);
         flatten(head.next);

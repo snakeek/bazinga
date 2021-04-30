@@ -10,15 +10,15 @@ import java.util.List;
  * Date:     2020/11/6 2:38 下午
  * Description:
  * Write a simple parser that will parse and run Deadfish.
- *
+ * <p>
  * Deadfish has 4 commands, each 1 character long:
- *
+ * <p>
  * i increments the value (initially 0)
  * d decrements the value
  * s squares the value
  * o outputs the value into the return array
  * Invalid characters should be ignored.
- *
+ * <p>
  * Deadfish.parse("iiisdoso") =- new int[] {8, 64};
  */
 public class DeadFish {
@@ -28,6 +28,7 @@ public class DeadFish {
             System.out.println(i);
         }
     }
+
     public static int[] parse(String data) {
         int value = 0;
         List<Integer> list = new ArrayList<>();

@@ -100,28 +100,28 @@ public class CommonList {
         while (l1 != null && l2 != null) {
             sum = l1.val + l2.val + add;
             if (head == null) {
-                head = new ListNode(sum%10);
+                head = new ListNode(sum % 10);
                 node = head;
             } else {
-                node.next = new ListNode(sum%10);
+                node.next = new ListNode(sum % 10);
                 node = node.next;
             }
-            add = sum/10;
+            add = sum / 10;
             l1 = l1.next;
             l2 = l2.next;
         }
         while (l2 != null) {
             sum = l2.val + add;
-            node.next = new ListNode(sum%10);
+            node.next = new ListNode(sum % 10);
             node = node.next;
-            add = sum/10;
+            add = sum / 10;
             l2 = l2.next;
         }
         while (l1 != null) {
             sum = l1.val + add;
-            node.next = new ListNode(sum%10);
+            node.next = new ListNode(sum % 10);
             node = node.next;
-            add = sum/10;
+            add = sum / 10;
             l1 = l1.next;
         }
         if (add > 0) {
@@ -157,10 +157,11 @@ public class CommonList {
             res = n;
         }
 
-        return (res-1);
+        return (res - 1);
     }
 
     static ListNode front;
+
     public static boolean isPalindrome(ListNode head) {
         front = head;
         return checkNode(front);
@@ -170,7 +171,7 @@ public class CommonList {
         if (node == null) {
             return true;
         }
-        boolean res = checkNode(node.next)&&node.val == front.val;
+        boolean res = checkNode(node.next) && node.val == front.val;
         front = front.next;
         return res;
     }

@@ -9,9 +9,9 @@ import com.ek.leetcode.bazinga.algorithm.TreeNode;
  * Date:     2020/9/4 6:42 下午
  * Description:
  * 给定一个二叉树，计算整个树的坡度。
- *
+ * <p>
  * 一个树的节点的坡度定义即为，该节点左子树的结点之和和右子树结点之和的差的绝对值。空结点的的坡度是0。
- *
+ * <p>
  * 整个树的坡度就是其所有节点的坡度之和。
  */
 public class SolutionNo563 {

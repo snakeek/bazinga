@@ -5,6 +5,8 @@ import org.apache.rocketmq.client.producer.SendResult;
 import org.apache.rocketmq.common.message.Message;
 import org.apache.rocketmq.remoting.common.RemotingHelper;
 
+import java.util.Collections;
+
 /**
  * Copyright (C), 2019-2021
  * FileName: TryRocketMq
@@ -38,5 +40,8 @@ public class TryRocketMqProduce {
         }
         //Shut down once the producer instance is not longer in use.
         producer.shutdown();
+
+//        Collections.unmodifiableCollection()
+
     }
 }

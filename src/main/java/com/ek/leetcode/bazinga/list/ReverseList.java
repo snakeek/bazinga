@@ -77,7 +77,7 @@ public class ReverseList {
         while (curr.next != null) {
             num++;
             curr = curr.next;
-            if (num%2 == 1) {
+            if (num % 2 == 1) {
                 sHead.next = curr;
                 sHead = sHead.next;
             } else {
@@ -105,7 +105,7 @@ public class ReverseList {
         ListNode oddHead = head;
         ListNode evenHead = head.next;
         ListNode even = evenHead;
-        while(even != null && even.next != null){
+        while (even != null && even.next != null) {
             oddHead.next = even.next;
             oddHead = oddHead.next;
             even.next = oddHead.next;

@@ -26,7 +26,7 @@ public class MoveZeroToTail {
 
     public static void main(String[] args) {
         MoveZeroToTail test = new MoveZeroToTail();
-        int[] arr = new int[]{0,1,0,3,12};
+        int[] arr = new int[]{0, 1, 0, 3, 12};
         test.moveZeroToTail(arr);
         for (int num : arr) {
             System.out.println(num);

@@ -22,7 +22,7 @@ public class AATest {
         long dates = (sdf.parse(end).getTime() - sdf.parse(start).getTime()) / (1000 * 3600 * 24);
 
         // 计算每天平均确认金额
-        Long aveAmount =  3500000 / dates;
+        Long aveAmount = 3500000 / dates;
         Long after = 4200000 / dates;
         Long eight = 1011800 / dates;
         System.out.println(dates);
@@ -35,7 +35,7 @@ public class AATest {
 
 
         System.out.println("========");
-        sortArr(new int[]{1,0,1,0,1,2,1,0,2});
+        sortArr(new int[]{1, 0, 1, 0, 1, 2, 1, 0, 2});
     }
 
     private int compareNext(int number, int time) {
@@ -43,13 +43,13 @@ public class AATest {
         int temp = number % time;
         int[] numArr = new int[COUNTER];
         int index = 0;
-        for (int i = 10; i<= time; i*=10) {
+        for (int i = 10; i <= time; i *= 10) {
             numArr[index] = temp % 10;
             temp = temp / 10;
             index++;
         }
 
-       return -1;
+        return -1;
     }
 
     private Integer[] getNumberArray(int number) {
@@ -63,11 +63,11 @@ public class AATest {
 
     public static void sortArr(int[] nums) {
         int zeroCounter = 0;
-        for (int i = nums.length - 1; i >= 0; i-- ) {
+        for (int i = nums.length - 1; i >= 0; i--) {
             if (nums[i] == 0) {
                 zeroCounter++;
             } else {
-                nums[i+zeroCounter] = nums[i];
+                nums[i + zeroCounter] = nums[i];
                 if (i != (nums.length - 1)) {//最右侧是非0
                     nums[i] = 0;
                 }

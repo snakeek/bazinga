@@ -11,16 +11,16 @@ package com.ek.leetcode.bazinga.algorithm.easy;
 public class SolutionNo268 {
     public static void main(String[] args) {
         SolutionNo268 s = new SolutionNo268();
-        System.out.println(s.missingNumber(new int[]{3,0,1,5,6,7,4}));
+        System.out.println(s.missingNumber(new int[]{3, 0, 1, 5, 6, 7, 4}));
     }
 
     public int missingNumber(int[] nums) {
         int sum;
         int length = nums.length + 1;
         if (length % 2 == 0) {
-            sum = (length - 1) * (length/2);
+            sum = (length - 1) * (length / 2);
         } else {
-            sum = (length - 1) * (length/2) + length/2;
+            sum = (length - 1) * (length / 2) + length / 2;
         }
         for (int i = 0; i < nums.length; i++) {
             sum -= nums[i];

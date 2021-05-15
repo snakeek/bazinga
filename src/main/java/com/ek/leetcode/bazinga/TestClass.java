@@ -1,6 +1,6 @@
 package com.ek.leetcode.bazinga;
 
-import java.util.Arrays;
+import java.util.*;
 
 /**
  * Copyright (C), 2019-2021
@@ -47,5 +47,23 @@ public class TestClass {
             n++;
         }
         return length;
+    }
+
+    //比左边都大，比右边都小
+    public static void getTargetNum(int[] nums) {
+        List<Integer> list = new ArrayList<>();
+        int min = 0;
+        int max = 2;
+        for (int i = 1; i < nums.length - 2; i++) {
+            if (nums[i] > nums[min] && nums[i] < nums[max]) {
+                list.add(i);
+                if (nums[min] < nums[i]) {
+                    nums[min] = nums[i];
+                }
+                max++;
+            } else if (nums[i] < nums[min]) {
+
+            }
+        }
     }
 }

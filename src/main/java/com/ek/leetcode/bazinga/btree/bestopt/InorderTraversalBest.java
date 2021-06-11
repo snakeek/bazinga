@@ -1,4 +1,4 @@
-package com.ek.leetcode.bazinga.leetcode.binary.bestopt;
+package com.ek.leetcode.bazinga.btree.bestopt;
 
 import com.ek.leetcode.bazinga.btree.TreeNode;
 

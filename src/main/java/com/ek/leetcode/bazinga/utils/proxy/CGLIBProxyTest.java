@@ -1,6 +1,7 @@
 package com.ek.leetcode.bazinga.utils.proxy;
 
-import com.ek.utils.proxy.service.TestService;
+
+import com.ek.leetcode.bazinga.utils.proxy.service.TestService;
 
 /**
  * Created by snakeek on 2017/7/9.

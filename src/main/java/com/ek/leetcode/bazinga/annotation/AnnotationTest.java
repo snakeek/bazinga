@@ -16,5 +16,9 @@ public class AnnotationTest {
 
         String aa = sb.append("日涨幅达到0.01").append("%").toString();
         System.out.println(aa);
+
+        String a = "abcd";
+        String b = "abcd";
+        System.out.println(a.contains(b));
     }
 }

@@ -19,12 +19,17 @@ public class Leetcode_0009 {
     }
 
     public boolean isPalindrome(int x) {
+        if (x < 10 && x >= 0) {
+            return true;
+        }
         if (x < 0) {
             return false;
         }
-        if (x < 10) {
-            return true;
-        }
+
+        String s = String.valueOf(x);
+        int a = 0;
+        int b = s.length() - 1;
+
 
 
         return false;

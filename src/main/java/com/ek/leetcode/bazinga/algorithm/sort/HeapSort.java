@@ -7,15 +7,22 @@ import java.util.Arrays;
  */
 public class HeapSort {
     public static void main(String[] args) {
-        int[] a = {49, 38, 65, 97, 76, 13, 27, 49, 78, 34, 12, 64};
-        int arrayLength = a.length;
-        //循环建堆
-        for (int i = 0; i < arrayLength - 1; i++) {
-            //建堆
-            buildMaxHeap(a, arrayLength - 1 - i);
-            //交换堆顶和最后一个元素
-            swap(a, 0, arrayLength - 1 - i);
-            System.out.println(Arrays.toString(a));
+//        int[] a = {49, 38, 65, 97, 76, 13, 27, 49, 78, 34, 12, 64};
+//        int arrayLength = a.length;
+//        //循环建堆
+//        for (int i = 0; i < arrayLength - 1; i++) {
+//            //建堆
+//            buildMaxHeap(a, arrayLength - 1 - i);
+//            //交换堆顶和最后一个元素
+//            swap(a, 0, arrayLength - 1 - i);
+//            System.out.println(Arrays.toString(a));
+//        }
+        String str = "CreditCard,Wallet";
+        String check = "Wallet";
+        if (str.toLowerCase().contains(check.toLowerCase())) {
+            System.out.println("!");
+        } else {
+            System.out.println("!!!!");
         }
     }
 

@@ -1,4 +1,4 @@
-package com.ek.leetcode.bazinga.algorithm.easy;
+package com.ek.leetcode.bazinga.algorithm.medium;
 
 /**
  * Copyright (C), 2019-2022
@@ -26,8 +26,6 @@ public class SolutionNo189 {
         for (int i = 0; i < nums.length; i++) {
             res[(i+k)%nums.length] = nums[i];
         }
-        for (int n : res) {
-            System.out.print(n + " ");
-        }
+        System.arraycopy(res, 0, nums, 0, nums.length);
     }
 }
